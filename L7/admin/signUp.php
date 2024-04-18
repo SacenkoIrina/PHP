@@ -17,9 +17,9 @@
 			fwrite($txt,$enter);
 			fclose($txt);
 			$initial= true;
-			$mesaj = "Contul a fost creat!";
+			$mesaj = "Учетная запись была создана!";
 		}
-		$log=fopen($fileName, "r+")or die("Nu a fost gasit fisierul!");
+		$log=fopen($fileName, "r+")or die("Файл не найден!");
 		while(!feof($log))
 		{
 			//trim — sterge spatiile si alte simboluri de la inceputul si sfarsitul sirului
@@ -31,11 +31,11 @@
 		fclose($log);
 		$mesaj = "";
 		if ($exist==true){
-			$mesaj = "<span class='error'>Un cont cu acest login si parola deja exista!!!<br />Introdu alte date pentru inregistrare!</span>";
+			$mesaj = "<span class='error'>Учетная запись с этим логином и паролем уже существует!!!<br />Introdu alte date pentru inregistrare!</span>";
 		} elseif($initial==true){
-			$mesaj = "<span class='error'>Este primul cont creat!</span>";
+			$mesaj = "<span class='error'>Это первая созданная учетная запись!</span>";
 		} else {
-			$txt=fopen("$fileName","a") or die("Fisier inaccesibil!");
+			$txt=fopen("$fileName","a") or die("Недоступный файл!");
 			$log=$_POST["login"];
 			fwrite($txt, $log);
 			$spatiu=" ";
@@ -45,7 +45,7 @@
 			$enter="\n";
 			fwrite($txt,$enter);
 			fclose($txt);
-			$mesaj = "<span class='error'>Contul a fost creat!</span>";
+			$mesaj = "<span class='error'>Учетная запись была создана!</span>";
 		}
 	}
 ?>
@@ -70,13 +70,13 @@
             <div class="signIn">
                 <input type="text" placeholder="Log-in" name="login" />
                 <input type="text" placeholder="Parola" name="pass" size="12" maxlength="10" /><br />
-                <input type="submit" value="Salveaza" />
-                <input type="reset" value="Șterge" />
+                <input type="submit" value="Сохранить" />
+                <input type="reset" value="Стереть" />
             </div>
 		</form>
         <?php
 			if(empty($_REQUEST['login'])||empty($_REQUEST['pass'])) {
-			    echo "<br /><span class='error'>*Completați toate câmpurile!!!</span>"; 
+			    echo "<br /><span class='error'>*Заполните все поля!!!</span>"; 
 			}
 		    echo '<br />'.$mesaj;
 		?>

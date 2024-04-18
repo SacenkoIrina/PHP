@@ -5,7 +5,7 @@
 	if ((isset($_POST["login"]))and(!empty($_POST['login']))and(isset($_POST["pass"]))and(!empty($_POST['pass']))) {
 		$password=$_POST["pass"];
 		$login=$_POST["login"];
-		$log=fopen("data/accounts.txt", "r")or die("Nu a fost gasit fisierul!");
+		$log=fopen("data/accounts.txt", "r")or die("Файл не найден!");
 		$exist=false;
 		while(!feof($log))
 		{

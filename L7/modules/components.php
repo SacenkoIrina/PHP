@@ -1,8 +1,8 @@
 <?php
-    //initializare variabile
+    //инициализация переменных
     $file_data = "admin/data/dateRezervari.txt";
     
-    //declarare functie validare date si adaugare date in fisier
+    //объявление функции проверки данных и добавления данных в файл
     function insertData($file_name){
         $name=$surname=$phone=$email=$int_date=$exit_date=$nmbr=$type=$obs="";
         $err="";

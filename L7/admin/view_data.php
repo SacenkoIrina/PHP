@@ -20,21 +20,21 @@
             <a href="logout.php" class="navbar"> Iesire </a>
 	</div>
     <div class="myData">
-        <h1>Datele stocate în fisier, despre comenzile realizate </h1>
+        <h1>Данные, хранящиеся в файле, о выполненных заказах</h1>
         <table>
             <tr>
-                <th>Nume</th>
-                <th>Preume</th>
-                <th>Nr.telefon</th>
+                <th>Имя</th>
+                <th>Фамилия</th>
+                <th>Номер телефона</th>
                 <th>Email</th>
-                <th>Data intrare</th>
-                <th>Data iesire</th>
-                <th>Nr.pers.</th>
-                <th>Tip cameră</th>
-                <th>Observatii</th>
+                <th>Дата входа</th>
+                <th>Дата выхода</th>
+                <th>Количество чел.</th>
+                <th>Тип комнаты</th>
+                <th>Замечания</th>
             </tr>
             <?php
-                $myData=fopen("data/dateRezervari.txt", "r")or die("Nu a fost gasit fisierul!");
+                $myData=fopen("data/dateRezervari.txt", "r")or die("Файл не найден!");
                 while(!feof($myData))
                 {
                     echo "<tr>";
