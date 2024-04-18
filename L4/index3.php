@@ -71,8 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $email = $_POST['email'];
         $comment = $_POST['comment'];
 
-        // Можно добавить дополнительные проверки данных, например, валидацию email
-
         // Если все в порядке, выводим комментарий
         echo "<div style='margin-top: 20px;'>";
         echo "<h2>Ваш комментарий:</h2>";
