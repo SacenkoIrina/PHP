@@ -60,54 +60,54 @@
 
 <?php if (!isset($_REQUEST['start'])) { ?>
 <form action="<?php echo $_SERVER['SCRIPT_NAME'] ?>" method="post">
- <div>
- <label>Ваше имя: <input name="name" type="text" size="30"></label>
- </div>
- <div>
- <label>Email: <input name="email" type="text" size="30"></label>
- </div>
- <div>
- <label>Возраст: <input name="age" type="number" min="0" max="150"></label>
- </div>
- <div>
- <label>Ваше мнение о нас напишите тут:
- <textarea name="message" cols="40" rows="4" placeholder="Ваше
-мнение..."></textarea>
- </label>
- </div>
- <div>
- <input type="reset" value="Стереть"/>
- <input type="submit" value="Передать" name="start"/>
- </div>
+    <div>
+    <label>Ваше имя: <input name="name" type="text" size="30"></label>
+    </div>
+    <div>
+    <label>Email: <input name="email" type="text" size="30"></label>
+    </div>
+    <div>
+    <label>Возраст: <input name="age" type="number" min="0" max="150"></label>
+    </div>
+    <div>
+    <label>Ваше мнение о нас напишите тут:
+    <textarea name="message" cols="40" rows="4" placeholder="Ваше
+    мнение..."></textarea>
+    </label>
+    </div>
+    <div>
+    <input type="reset" value="Стереть"/>
+    <input type="submit" value="Передать" name="start"/>
+    </div>
 </form>
 <?php } else {
  // Данные с формы
- $data = [
- 'name' => $_POST['name'] ?? "",
- 'email' => $_POST['email'] ?? "",
- 'age' => $_POST['age'] ?? "",
- 'message' => $_POST['message'] ?? "",
- ];
+    $data = [
+    'name' => $_POST['name'] ?? "",
+    'email' => $_POST['email'] ?? "",
+    'age' => $_POST['age'] ?? "",
+    'message' => $_POST['message'] ?? "",
+    ];
  // Проверка на ввод корректного email
- if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
-     die("Некорректный email!");
- }
+    if (!filter_var($data['email'], FILTER_VALIDATE_EMAIL)) {
+        die("Некорректный email!");
+    }
  // Сохранение данных в файл
- $file = fopen('messages.txt', 'a+') or die("Недоступный файл!");
- foreach ($data as $field => $value) {
-     fwrite($file, "$field: $value\n");
- }
- fwrite($file, "\n");
- fclose($file);
+    $file = fopen('messages.txt', 'a+') or die("Недоступный файл!");
+    foreach ($data as $field => $value) {
+        fwrite($file, "$field: $value\n");
+    }
+    fwrite($file, "\n");
+    fclose($file);
  // Вывод данных на экран
- echo '<div class="message-container">Данные были сохранены! Вот что хранится в файле: <br />';
- $file = fopen("messages.txt", "r") or die("Недоступный файл!");
- while (!feof($file)) {
-     echo fgets($file) . "<br />";
- }
- fclose($file);
- echo '</div>';
-} ?>
+    echo '<div class="message-container">Данные были сохранены! Вот что хранится в файле: <br />';
+    $file = fopen("messages.txt", "r") or die("Недоступный файл!");
+    while (!feof($file)) {
+        echo fgets($file) . "<br />";
+    }
+    fclose($file);
+    echo '</div>';
+    } ?>
 
 </body>
 </html>
