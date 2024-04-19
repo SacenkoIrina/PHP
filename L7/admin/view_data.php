@@ -17,7 +17,7 @@
 </head>
 <body>
     <div class="link">
-            <a href="logout.php" class="navbar"> Iesire </a>
+            <a href="logout.php" class="navbar"> Выход </a>
 	</div>
     <div class="myData">
         <h1>Данные, хранящиеся в файле, о выполненных заказах</h1>

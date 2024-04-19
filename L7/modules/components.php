@@ -10,37 +10,37 @@
             if (isset($_POST["name"])&&(!empty($_POST["name"]))){
                 $name=$_POST["name"];
             } else {
-                $err.="Eroare - nume!";
+                $err.="Ошибка - Имя!";
             }
             if (isset($_POST["surname"])&&(!empty($_POST["surname"]))){
                 $surname=$_POST["surname"];
             } else {
-                $err.="Eroare - prenume!";
+                $err.="Ошибка - Фамилия!";
             }
             if (isset($_POST["phone"])&&(!empty($_POST["phone"]))){
                 $phone=$_POST["phone"];
             } else {
-                $err.="Eroare - nr. telefon!";
+                $err.="Ошибка - Номер телефона!";
             }
             if (isset($_POST["email"])&&(!empty($_POST["email"]))){
                 $email=$_POST["email"];
             } else {
-                $err.="Eroare - email!";
+                $err.="Ошибка - Email!";
             }
             if (isset($_POST["int_date"])&&(!empty($_POST["int_date"]))){
                 $int_date=$_POST["int_date"];
             } else {
-                $err.="Eroare - data de intrare!";
+                $err.="Ошибка - Дата входа!";
             }
             if (isset($_POST["exit_date"])&&(!empty($_POST["exit_date"]))){
                 $exit_date=$_POST["exit_date"];
             } else {
-                $err.="Eroare - data de iesire!";
+                $err.="Ошибка - Дата выхода!";
             }
             if (isset($_POST["nmbr"])&&(!empty($_POST["nmbr"]))){
                 $nmbr=$_POST["nmbr"];
             } else {
-                $err.="Eroare - nr. persoane!";
+                $err.="Ошибка - Количество человек!";
             }   
             if (isset($_POST["type"])&&(!empty($_POST["type"]))){
                 $type=$_POST["type"];
@@ -50,7 +50,7 @@
                     case "apartament": $type="Apartament"; break;
                 }
             } else {
-                $err.="Eroare - tip camera!";
+                $err.="Ошибка - Тип комнаты!";
             }
             $obs = (empty($_POST["obs"])) ? "-" : $_POST["obs"];
 
@@ -59,7 +59,7 @@
                 fwrite($txt, $name."\t".$surname."\t".$phone."\t".$email."\t".$int_date."\t".$exit_date."\t".$nmbr."\t".$type."\t".$obs);
                 fwrite($txt,"\n");
                 fclose($txt);
-                $err=  "<span class='error'>Datele au fost adăugate!</span>";
+                $err=  "<span class='error'>Данные были введены!</span>";
             }
             return $err;
         }

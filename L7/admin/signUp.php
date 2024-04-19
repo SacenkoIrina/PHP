@@ -65,7 +65,7 @@
             <a href="index.php" class="navbar"> Autentificare</a>
 	</div>    
     <div class="myForm">
-		<h1>Pentru a avea acces la date - înregistrați-va!</h1>
+		<h1>Чтобы получить доступ к данным - зарегестрируйтесь!</h1>
 		<form method="POST" autocomplete="off" action="<?php $_SERVER['SCRIPT_NAME']?>">
             <div class="signIn">
                 <input type="text" placeholder="Log-in" name="login" />
