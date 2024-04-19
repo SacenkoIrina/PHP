@@ -71,7 +71,7 @@
                 <input type="text" placeholder="Log-in" name="login" />
                 <input type="text" placeholder="Parola" name="pass" size="12" maxlength="10" /><br />
                 <input type="submit" value="Сохранить" />
-                <input type="reset" value="Стереть" />
+                <input type="reset" value="Отменить" />
             </div>
 		</form>
         <?php

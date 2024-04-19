@@ -34,10 +34,10 @@
 </head>
 <body>
     <div class="link">
-            <a href="signUp.php" class="navbar"> Inregistrare</a>
+            <a href="signUp.php" class="navbar">Регистрация</a>
 	</div>    
     <div class="myForm">
-        <h1>Pentru a avea acces la date, autentificați-vă!!!</h1>
+        <h1>Что бы получить доступ к данным, войдите в аккаунт !!!</h1>
         <form method="POST" autocomplete="off" action="<?php $_SERVER['SCRIPT_NAME']?>">
             <div class="signIn">
                 <input type="text" placeholder="Log-in" name="login" />
